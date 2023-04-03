@@ -1,0 +1,35 @@
+default interface bankaccount-types {
+    record aggregate-state {
+        balance: u32,
+        min-balance: u32,
+        account-number: string,
+        customer-id: string,
+        reserved-amount: u32
+    }
+
+    record account-created-event {
+        initial-balance: u32,
+        account-number: string,
+        min-balance: u32,
+        customer-id: string
+    }
+}
+
+interface concordance-types {
+    record event-with-state {
+        event: concordance-event,
+        state: option<list<u8>>
+    }
+
+    record concordance-event {
+        stream-id: string,
+        event-type: string,
+        payload: option<list<u8>>
+    }
+
+    record state-ack {
+        state: option<list<u8>>,
+        succeeded: bool,
+        error: option<string>
+    }
+}

@@ -1,0 +1,13 @@
+// This wit imports the bank account aggregate and exports the
+// generalized aggregate interface
+
+interface aggregate {
+    use pkg.types.concordance-types.{event-with-state, state-ack}
+
+    apply-event: func(event: event-with-state) -> result<state-ack, string>
+}
+
+default world concordance-aggregate {
+    import bankaccount: pkg.bankaccount-aggregate
+    export aggregate: self.aggregate 
+}
