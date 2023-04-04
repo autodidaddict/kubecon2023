@@ -1,2 +1,2 @@
-# Aggregate Fill component
+# Concordance Aggregate Fill component
 This component exports the generic Concordance aggregate interface, specifically the `apply_event` function. In turn it imports the bank account interface so it can convert that to an `apply_account_created` call.
