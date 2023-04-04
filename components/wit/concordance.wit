@@ -10,4 +10,5 @@ interface aggregate {
 default world concordance-aggregate {
     import bankaccount: pkg.bankaccount-aggregate
     export aggregate: self.aggregate 
+    export concordance-types: pkg.types.concordance-types
 }
