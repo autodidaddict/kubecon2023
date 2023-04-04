@@ -10,7 +10,7 @@ struct BankAccount;
 
 impl AccountAggregate for BankAccount {
     fn apply_account_created(
-        _state: AggregateState,
+        _state: Option<AggregateState>,
         event: AccountCreatedEvent,
     ) -> Result<AggregateState, String> {
         println!("{}", event.account_number);
