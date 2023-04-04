@@ -5,7 +5,7 @@
 default interface bankaccount-agg {
     use pkg.types.{aggregate-state, account-created-event}
 
-    apply-account-created: func(state: aggregate-state, event: account-created-event) -> result<aggregate-state, string>
+    apply-account-created: func(state: option<aggregate-state>, event: account-created-event) -> result<aggregate-state, string>
 }
 
 default world bankaccount-aggregate {
