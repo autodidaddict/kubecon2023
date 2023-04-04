@@ -9,5 +9,6 @@ default interface bankaccount-agg {
 }
 
 default world bankaccount-aggregate {
+    export bankaccount-types: pkg.types.bankaccount-types
     export account-aggregate: self.bankaccount-agg
 }
